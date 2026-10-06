@@ -1,0 +1,22 @@
+# MarketPulse CORE configuration contract.
+# This file is intentionally human-readable.
+# Parsing YAML is not required by the 18-hour CORE.
+
+app:
+  name: MarketPulse
+
+market:
+  provider: csv
+  lookback: 1mo
+  interval: 1d
+
+  instrument:
+    ticker: AAPL
+    name: Apple Inc.
+
+  benchmark:
+    ticker: SP500
+    name: S&P 500
+
+data:
+  file: data/sample/prices.csv
