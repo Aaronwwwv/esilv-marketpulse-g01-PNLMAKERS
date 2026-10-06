@@ -333,13 +333,6 @@ TD11 Dash Dashboard
 TD12 Integration + Release
 ```
 
-Full sequence:
-
-[TD sequence and learning path](docs/06_TD_SEQUENCE_AND_LEARNING_PATH.md)
-
-Lab index:
-
-[docs/labs/README.md](docs/labs/README.md)
 
 ## Assessment checkpoints
 
@@ -414,48 +407,7 @@ Target structure:
 
 [Target repository structure](docs/05_TARGET_REPOSITORY_STRUCTURE.md)
 
-## Teaching readiness
 
-The current release decision is:
-
-```text
-TEACHING BASELINE READY
-WITH EXTERNAL PRE-CLASS CHECKS
-```
-
-Repository and pedagogical contracts have been dry-run and remediated.
-
-External services and platform behaviours are verified at the relevant pre-class gate rather than being assumed.
-
-Use:
-
-- [Teaching readiness and dry-run evidence](docs/14_TEACHING_READINESS_AND_DRY_RUN_PLAN.md)
-- [Instructor contingency and recovery playbook](docs/15_INSTRUCTOR_CONTINGENCY_AND_RECOVERY_PLAYBOOK.md)
-- [Teaching baseline release and pre-class gates](docs/16_TEACHING_BASELINE_RELEASE.md)
-
-## Pre-class operational readiness
-
-The frozen teaching baseline remains:
-
-```text
-TEACHING BASELINE READY
-WITH EXTERNAL PRE-CLASS CHECKS
-```
-
-The execution roadmap for those remaining real-environment checks is:
-
-[Pre-class operational readiness roadmap](docs/17_PRE_CLASS_OPERATIONAL_READINESS_ROADMAP.md)
-
-Current R8 starting point:
-
-```text
-R8.1
-Student bootstrap and clone validation
-```
-
-R8 may validate external services and activate qualified Advanced material.
-
-It does not silently change the frozen CORE.
 
 ## Security
 
@@ -476,39 +428,6 @@ Do not copy another student's credentials.
 
 Do not fabricate provider evidence when an external service is unavailable.
 
-## Teaching layers: CORE / OPTIONAL / ADVANCED / INSTRUCTOR
-
-MarketPulse now distinguishes four teaching layers:
-
-```text
-CORE
-=
-mandatory common path
-+
-checkpoint-aligned
-+
-18-hour curriculum
-
-OPTIONAL
-=
-lightweight extension inside a TD
-+
-not required for checkpoint evidence
-
-ADVANCED
-=
-materially deeper student practice
-+
-dedicated support under docs/advanced/
-+
-never required for a checkpoint
-
-INSTRUCTOR
-=
-teacher-facing conceptual depth
-+
-not a student deliverable
-```
 
 The common CORE still does not require:
 
@@ -550,32 +469,6 @@ Such supports are not activated as student exercises until their real delivery g
 
 This README intentionally does not display CI, security, release or license badges because those contracts are not present in the CORE repository.
 
-## Key documentation
-
-- [Functional contract](docs/00_MARKETPULSE_FUNCTIONAL_CONTRACT.md)
-- [Student onboarding](docs/01_STUDENT_ONBOARDING.md)
-- [MarketPulse use case](docs/02_MARKETPULSE_USE_CASE.md)
-- [Git team workflow](docs/03_GITHUB_TEAM_WORKFLOW.md)
-- [Checkpoints and evidence](docs/04_CHECKPOINTS_AND_EVIDENCE.md)
-- [Target repository structure](docs/05_TARGET_REPOSITORY_STRUCTURE.md)
-- [TD sequence](docs/06_TD_SEQUENCE_AND_LEARNING_PATH.md)
-- [Transverse review](docs/07_TD_TRANSVERSE_REVIEW_AND_REBALANCING.md)
-- [Remediation plan](docs/08_TD_REMEDIATION_PLAN.md)
-- [Yahoo instructor reference](docs/09_YAHOO_FINANCE_INSTRUCTOR_REFERENCE.md)
-- [Bloomberg instructor reference](docs/10_BLOOMBERG_INSTRUCTOR_REFERENCE.md)
-- [Bloomberg provider scaffold](docs/11_BLOOMBERG_PROVIDER_SCAFFOLD.md)
-- [Application snapshot contract](docs/12_MARKETPULSE_APPLICATION_SNAPSHOT_CONTRACT.md)
-- [Libraries and dependencies](docs/13_MARKETPULSE_LIBRARIES_AND_DEPENDENCIES.md)
-- [Teaching readiness and dry-run plan](docs/14_TEACHING_READINESS_AND_DRY_RUN_PLAN.md)
-- [Instructor contingency and recovery playbook](docs/15_INSTRUCTOR_CONTINGENCY_AND_RECOVERY_PLAYBOOK.md)
-- [Teaching baseline release](docs/16_TEACHING_BASELINE_RELEASE.md)
-- [Pre-class operational readiness roadmap](docs/17_PRE_CLASS_OPERATIONAL_READINESS_ROADMAP.md)
-- [Instructor guide visual asset registry](docs/18_INSTRUCTOR_GUIDE_VISUAL_ASSET_REGISTRY.md)
-- [Pre-lab diagnostic and interpretation](docs/diagnostic/README.md)
-- [Advanced track](docs/advanced/README.md)
-- [Instructor deep dives](docs/instructor/deep-dives/README.md)
-- [TD enrichment capsules](docs/instructor/02_TD_ENRICHMENT_CAPSULES.md)
-- [Legacy course analysis and migration](docs/legacy/README.md)
 
 ---
 
