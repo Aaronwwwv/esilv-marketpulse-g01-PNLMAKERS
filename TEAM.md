@@ -15,6 +15,7 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 | Aaron [Ton nom] | @Aaronwwwv |
 | [Prénom Nom pote 1] | @justglz |
 | [Prénom Nom pote 2] | @FlorianDubreu |
+| [Prénom Nom pote 3] | @KillianCalais |
 
 
 ## Repository
