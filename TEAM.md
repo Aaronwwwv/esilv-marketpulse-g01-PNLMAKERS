@@ -12,10 +12,10 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 
 | Full name | GitHub username |
 |---|---|
-| Aaron [Ton nom] | @Aaronwwwv |
-| [Prénom Nom pote 1] | @justglz |
-| [Prénom Nom pote 2] | @FlorianDubreu |
-| [Prénom Nom pote 3] | @KillianCalais |
+| Aaron Dinguirard | @Aaronwwwv |
+| Justin Galliez | @justglz |
+| Florian Dubreu-Cazin | @FlorianDubreu |
+| Killian Calais | @KillianCalais |
 
 
 ## Repository
