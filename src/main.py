@@ -39,7 +39,7 @@ def main():
     instrument_latest = instrument_prices[-1]
     benchmark_latest = benchmark_prices[-1]
 
-    print("=== MarketPulse ===")
+    print("=== MarketPulse - Instrument vs Benchmark ===")
     print()
     print("Instrument")
     print(f"{instrument['ticker']} - {instrument['name']}")
