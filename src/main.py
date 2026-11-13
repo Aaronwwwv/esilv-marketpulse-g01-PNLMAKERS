@@ -27,6 +27,7 @@ def filter_prices(prices, ticker):
 
 
 def main():
+    """Point d'entrée de MarketPulse : charge, filtre et affiche les données de marché."""
     instruments = load_instruments()
     prices = load_prices()
 
