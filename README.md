@@ -475,3 +475,48 @@ This README intentionally does not display CI, security, release or license badg
 **Course:** MESIFI472326 - Python, Git, Linux  
 **School:** ESILV - A4  
 **Use case:** MarketPulse - Multi-Source Financial Market Data Dashboard
+
+## How to run MarketPulse
+
+### Prerequisites
+
+- Python 3.x installed (`python --version`)
+- Run commands from the repository root (the folder containing `src/` and `data/`)
+- No external package is required for the CORE version
+
+### Run
+
+```bash
+python src/main.py
+```
+
+### Expected output (example)
+
+```text
+=== MarketPulse ===
+
+Market configuration
+Period   : 1 month
+Interval : Daily
+
+Instrument
+AAPL - Apple Inc.
+Observations : 21
+First date   : 2026-09-01
+Last date    : 2026-09-30
+First close  : 250.00 USD
+Last close   : 266.20 USD
+
+Benchmark
+SP500 - S&P 500
+Observations : 21
+First date   : 2026-09-01
+Last date    : 2026-09-30
+First close  : 6600.00
+Last close   : 6742.00
+```
+
+### Troubleshooting
+
+- `FileNotFoundError`: make sure you run the command from the repository root.
+- `python: command not found`: try `python3 src/main.py`.
