@@ -2,34 +2,27 @@ import json
 from pathlib import Path
 
 
-ACCESS_MODE = "APPROVED_SAMPLE"
 SAMPLE_PATH = Path("data/sample/bloomberg_reference_sample.json")
 
-# Canonical MarketPulse ticker -> Bloomberg identifier (TD09 mapping)
+# TD09 decision: the lab runs in APPROVED_SAMPLE mode.
+ACCESS_MODE = "APPROVED_SAMPLE"
+
+# Canonical MarketPulse ticker -> Bloomberg identifier
 BLOOMBERG_IDENTIFIERS = {
     "AAPL": "AAPL US Equity",
     "SP500": "SPX Index",
 }
 
 
-def fetch_raw_bloomberg_history(identifier, start_date=None, end_date=None):
-    # APPROVED_SAMPLE raw input boundary: reads the approved fallback fixture.
-    # No live Bloomberg connection is made here.
+def load_sample():
     with open(SAMPLE_PATH, encoding="utf-8") as file:
-        fixture = json.load(file)
-
-    for series in fixture["series"]:
-        if series["provider_identifier"] == identifier:
-            return series
-
-    raise ValueError(f"No approved sample series for {identifier}")
+        return json.load(file)
 
 
-def normalize_bloomberg_history(raw_data, canonical_ticker):
-    # Teaching wrapper keys (not Bloomberg field mnemonics) -> canonical row
+def normalize_bloomberg_history(series, canonical_ticker):
     rows = []
 
-    for observation in raw_data["observations"]:
+    for observation in series["observations"]:
         rows.append({
             "date": observation["observation_date"],
             "ticker": canonical_ticker,
@@ -44,17 +37,12 @@ def normalize_bloomberg_history(raw_data, canonical_ticker):
 
 
 def fetch_bloomberg_prices(canonical_ticker):
-    identifier = BLOOMBERG_IDENTIFIERS[canonical_ticker]
-    raw_data = fetch_raw_bloomberg_history(identifier)
+    data = load_sample()
 
-    if raw_data["canonical_ticker"] != canonical_ticker:
-        raise ValueError(
-            f"Sample series {identifier} is not mapped to {canonical_ticker}"
-        )
+    for series in data["series"]:
+        if series["canonical_ticker"] == canonical_ticker:
+            return normalize_bloomberg_history(series, canonical_ticker)
 
-    rows = normalize_bloomberg_history(raw_data, canonical_ticker)
-
-    if not rows:
-        raise ValueError(f"No Bloomberg-stage rows for {canonical_ticker}")
-
-    return rows
+    raise ValueError(
+        f"No approved Bloomberg sample for {canonical_ticker}"
+    )
