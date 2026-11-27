@@ -476,47 +476,89 @@ This README intentionally does not display CI, security, release or license badg
 **School:** ESILV - A4  
 **Use case:** MarketPulse - Multi-Source Financial Market Data Dashboard
 
-## How to run MarketPulse
+## How to run MarketPulse (team PNL Makers release)
+
+**Team:** PNL Makers — Aaron (@Aaronwwwv), Justin (@justglz), Florian (@FlorianDubreu), Killian (@KillianCalais)
+
+### What it does
+
+MarketPulse compares one **instrument** with its **benchmark** over the same period:
+
+| Role | Canonical ticker | Name |
+|---|---|---|
+| Instrument | AAPL | Apple Inc. |
+| Benchmark | SP500 | S&P 500 |
+
+Lookback: **1 month** — Interval: **Daily**.
+It shows the period return of each series, the relative performance (instrument − benchmark, in percentage points) and a base-100 comparison.
+
+### Provider used in this release
+
+**Bloomberg stage - APPROVED_SAMPLE**
+
+- Data comes from the instructor-approved fixture `data/sample/bloomberg_reference_sample.json`.
+- This is **not** a live Bloomberg connection (see `docs/BLOOMBERG_FIELD_MAPPING.md`).
+- Other implemented paths: Yahoo Finance via `yfinance` and local CSV. The source is selected with `DATA_SOURCE` in `src/main.py` (`"bloomberg"`, `"yahoo"` or `"csv"`).
 
 ### Prerequisites
 
-- Python 3.x installed (`python --version`)
-- Run commands from the repository root (the folder containing `src/` and `data/`)
-- No external package is required for the CORE version
+- Python 3.x (`python --version`)
+- Run every command from the repository root (the folder containing `src/` and `data/`)
+- Internet access is only needed to install dependencies, or if `DATA_SOURCE = "yahoo"`
 
-### Run
+### Install
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Run the terminal version
 
 ```bash
 python src/main.py
 ```
 
-### Expected output (example)
+Expected output (APPROVED_SAMPLE, beginning and end):
 
 ```text
 === MarketPulse ===
 
 Market configuration
-Period   : 1 month
-Interval : Daily
+Provider    : Bloomberg stage
+Access mode : APPROVED_SAMPLE
+Period      : 1 month
+Interval    : Daily
+...
+Relative performance
+AAPL vs SP500 : +4.33 percentage points
 
-Instrument
-AAPL - Apple Inc.
-Observations : 21
-First date   : 2026-09-01
-Last date    : 2026-09-30
-First close  : 250.00 USD
-Last close   : 266.20 USD
-
-Benchmark
-SP500 - S&P 500
-Observations : 21
-First date   : 2026-09-01
-Last date    : 2026-09-30
-First close  : 6600.00
-Last close   : 6742.00
+Base 100
+AAPL  : 100.00 -> 106.48
+SP500 : 100.00 -> 102.15
 ```
+
+### Run the dashboard
+
+```bash
+python src/dashboard.py
+```
+
+Then open http://127.0.0.1:8050/ (in GitHub Codespaces: **PORTS** tab → port 8050 → Open in Browser).
+Stop the server with `Ctrl + C`.
+
+The dashboard only displays the shared result of `build_market_snapshot()` from `src/main.py`; it does not call providers or recompute analytics.
+
+### Environment constraints
+
+- No live Bloomberg terminal is available in the team environment: the Bloomberg path runs in APPROVED_SAMPLE mode only.
+- The Yahoo path depends on the external `yfinance` service and may be temporarily unavailable.
+
+### Evidence
+
+Individual results are stored in `evidence/<github-username>/`.
 
 ### Troubleshooting
 
-- `FileNotFoundError`: make sure you run the command from the repository root.
-- `python: command not found`: try `python3 src/main.py`.
+- `ModuleNotFoundError`: run `python -m pip install -r requirements.txt`.
+- `FileNotFoundError`: run the command from the repository root.
+- `python: command not found`: try `python3`.
