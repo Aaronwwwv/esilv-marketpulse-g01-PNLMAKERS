@@ -22,4 +22,3 @@ def test_calculate_base_100_starts_at_100():
 
     assert result[0]["value"] == 100.0
     assert result[-1]["value"] == pytest.approx(150.0)
-    
